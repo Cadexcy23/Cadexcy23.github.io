@@ -18,9 +18,7 @@
 	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 	color: white;
 	font-weight: 600;
-	padding: 0px;
 	text-wrap: balance;
-	text-align: center;
 }
 
 header h1 {
@@ -29,6 +27,7 @@ header h1 {
 	top: 0px;
 	margin: 0;
 	padding-bottom: 5px;
+	text-align: center;
 	width: calc(100% - 10px);
 	border: 5px solid white;
 	z-index: 5;
@@ -74,6 +73,7 @@ nav .border {
 a {
 	text-decoration-color: var(--momentary-green);
 	transition: color 0.25s;
+	text-align: center;
 }
 
 a:visited {
@@ -117,6 +117,8 @@ p {
 	text-wrap: pretty;
 	text-align: left;
 	display: inline-block;
+	width: calc(100% - 40px);
+	padding: 0px 20px;
 }
 
 main h1,
@@ -274,6 +276,7 @@ main h3 {
 	/*should be a div*/
 	width: 85%;
 	margin: 10px auto;
+	text-align: center;
 	border: 5px inset rgba(var(--vigilant-red-rgb), 0.75);
 	/*background-color: rgba(var(--vigilant-red-rgb), 0.75);*/
 	background: linear-gradient(
@@ -303,21 +306,21 @@ main h3 {
 }
 
 #about-me {
-	position: relative;
-	display: flex;
 	width: calc(100% - 40px);
 	min-height: 256px;
 	margin: 0 auto;
 }
 
 #about-me p {
-	flex: 1;
+	display: inline-block;
+	text-align: left;
 }
 
 #profile-picture-container {
 	position: relative;
 	top: 0;
 	left: 0;
+	float: inline-end;
 }
 
 #profile-picture-eye {
@@ -325,8 +328,8 @@ main h3 {
 	top: 0;
 	left: 0;
 	width: 256px;
+	margin-left: 10px;
 	border: white 5px solid;
-	margin-bottom: 20px;
 }
 
 #profile-picture {
@@ -334,10 +337,29 @@ main h3 {
 	top: 0;
 	left: 0;
 	width: 256px;
+	margin-left: 10px;
 	border: white 5px solid;
 	transition: opacity 1s;
 }
 
 #profile-picture:hover {
 	opacity: 90%;
+}
+
+#pixie {
+	display: flex;
+	flex-direction: column;
+	border: white solid 5px;
+	float: inline-start;
+	margin-right: 20px;
+}
+
+#pixie img {
+	width: 128px;
+}
+
+#pixie span {
+	border-top: white solid 5px;
+	text-align: center;
+	padding-bottom: 2px;
 }
