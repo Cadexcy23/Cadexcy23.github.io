@@ -18,7 +18,7 @@
 	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 	color: white;
 	font-weight: 600;
-	text-wrap: balance;
+	text-wrap: stable;
 }
 
 header h1 {
@@ -47,6 +47,11 @@ nav {
 
 nav .border {
 	width: 128px;
+}
+
+section {
+	width: calc(100% - 40px);
+	margin: 0 auto;
 }
 
 #page-nav {
@@ -109,16 +114,6 @@ main {
 	);
 	z-index: -1;
 	border: none;
-}
-
-p {
-	padding-left: 5px;
-	padding-right: 5px;
-	text-wrap: pretty;
-	text-align: left;
-	display: inline-block;
-	width: calc(100% - 40px);
-	padding: 0px 20px;
 }
 
 main h1,
@@ -293,6 +288,7 @@ main h3 {
 	/*should be a div*/
 	width: 85%;
 	margin: 10px auto;
+	text-align: center;
 	border: 5px inset rgba(var(--enlightened-yellow-rgb), 0.75);
 	/*background-color: rgba(var(--enlightened-yellow-rgb), 0.75);*/
 	background: linear-gradient(
@@ -305,15 +301,16 @@ main h3 {
 		rgba(var(--enlightened-yellow-rgb), 0.75);
 }
 
-#about-me {
-	width: calc(100% - 40px);
-	min-height: 256px;
-	margin: 0 auto;
+#skill-section {
+	display: flex;
+	flex-wrap: wrap;
 }
 
-#about-me p {
-	display: inline-block;
-	text-align: left;
+#skill-section img {
+	max-width: 50px;
+
+	margin: auto;
+	padding: 20px;
 }
 
 #profile-picture-container {
@@ -362,4 +359,20 @@ main h3 {
 	border-top: white solid 5px;
 	text-align: center;
 	padding-bottom: 2px;
+	font-size: 12px;
+}
+
+#projects-section {
+	min-height: 150px;
+}
+
+#github-link {
+	float: right;
+	width: 100px;
+	transition: opacity 0.25s;
+	border-bottom: #00ff80 solid 1px;
+}
+
+#github-link:hover {
+	opacity: 50%;
 }
