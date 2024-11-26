@@ -49,19 +49,36 @@ nav .border {
 	width: 128px;
 }
 
+#page-nav {
+	display: flex;
+	flex-direction: column;
+	height: 200px;
+}
+
+#page-nav a {
+	margin: auto;
+	position: relative;
+	left: 10px;
+}
+
+#nav-label {
+	position: absolute;
+	top: 15px;
+	padding-top: 15px;
+	writing-mode: vertical-lr;
+	text-orientation: upright;
+	border: white solid 5px;
+	font-size: 12px;
+}
+
 section {
 	width: calc(100% - 40px);
 	margin: 0 auto;
 }
 
-#page-nav {
-	display: flex;
-	flex-direction: column;
-}
-
 #color-change-container {
 	position: fixed;
-	top: 300px;
+	top: 500px;
 	left: 23px;
 	width: calc(128px + 10%);
 }
@@ -370,9 +387,23 @@ main h3 {
 	float: right;
 	width: 100px;
 	transition: opacity 0.25s;
-	border-bottom: #00ff80 solid 1px;
+	border-bottom: var(--momentary-green) solid 1px;
 }
 
 #github-link:hover {
 	opacity: 50%;
+}
+
+address {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+address div {
+	margin: auto;
+	padding: 20px;
+}
+
+#contact-section img {
+	width: 50px;
 }
