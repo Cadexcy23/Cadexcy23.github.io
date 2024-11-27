@@ -1,6 +1,8 @@
 /*main styles*/
 
 :root {
+	--bg1: #2c1139;
+	--bg2: #003052;
 	--omnipotent-purple: #2c1139;
 	--conservator-blue: #003052;
 	--preliminary-pink: #ff0080;
@@ -31,11 +33,7 @@ header h1 {
 	width: calc(100% - 10px);
 	border: 5px solid white;
 	z-index: 5;
-	background: linear-gradient(
-		135deg,
-		var(--omnipotent-purple),
-		var(--conservator-blue)
-	);
+	background: linear-gradient(135deg, var(--bg1), var(--bg2));
 }
 
 nav {
@@ -58,10 +56,13 @@ nav .border {
 #page-nav a {
 	margin: auto;
 	position: relative;
-	left: 10px;
+	bottom: 10px;
+	left: 11px;
+	width: 98px;
+	border-bottom: white solid 2.5px;
 }
 
-#nav-label {
+.side-label {
 	position: absolute;
 	top: 15px;
 	padding-top: 15px;
@@ -78,7 +79,7 @@ section {
 
 #color-change-container {
 	position: fixed;
-	top: 500px;
+	bottom: 120px;
 	left: 23px;
 	width: calc(128px + 10%);
 }
@@ -92,14 +93,104 @@ section {
 	flex-direction: column;
 }
 
-a {
-	text-decoration-color: var(--momentary-green);
-	transition: color 0.25s;
+#color-change-form {
+	position: relative;
+	top: 12px;
+	left: 10px;
+	margin: auto;
+	width: 105px;
+	height: 179px;
+	z-index: -10;
+}
+
+#color-change-form input {
+	width: 100%;
+	height: 5px;
+	margin: auto;
+	appearance: none;
+}
+
+input::-webkit-slider-thumb {
+	-webkit-appearance: none;
+	position: relative;
+	bottom: 3px;
+	height: 12px;
+	width: 12px;
+	background: #fff;
+}
+
+input::-webkit-slider-runnable-track {
+	height: 10px;
+	border: white 2px solid;
+}
+
+.red::-webkit-slider-runnable-track {
+	background: #c00;
+}
+
+.green::-webkit-slider-runnable-track {
+	background: #0c0;
+}
+
+.blue::-webkit-slider-runnable-track {
+	background: #00c;
+}
+
+#preset-colors {
+	position: absolute;
+	left: calc(50% + 58px);
+	display: grid;
+	height: 160px;
+	align-content: space-between;
+}
+
+#preset-colors button {
+	width: 20px;
+	height: 20px;
+	border: darkgray solid 5px;
+	overflow: visible;
+}
+
+#preset-colors button:hover {
+	border-color: gray;
+}
+
+#default-color {
+	background: linear-gradient(
+		135deg,
+		var(--omnipotent-purple),
+		var(--conservator-blue)
+	);
+}
+#experimental-color {
+	background: linear-gradient(
+		135deg,
+		var(--preliminary-pink),
+		var(--momentary-green)
+	);
+}
+#cadex-color {
+	background: linear-gradient(135deg, rgb(139, 0, 0), rgb(0, 0, 0));
+}
+#madness-color {
+	background: linear-gradient(135deg, rgb(0, 0, 255), rgb(128, 0, 128));
+}
+#grimshaw-color {
+	background: linear-gradient(135deg, rgb(204, 204, 1), rgb(105, 55, 0));
+}
+
+label {
+	display: inline-block;
+	font-size: 10px;
+	width: 100%;
+	margin: 0px;
 	text-align: center;
 }
 
-a:visited {
-	text-decoration-color: var(--preliminary-pink);
+a {
+	text-decoration-color: var(white);
+	transition: color 0.25s;
+	text-align: center;
 }
 
 a:hover {
@@ -124,11 +215,7 @@ main {
 	left: 0px;
 	width: 100%;
 	height: 100%;
-	background: linear-gradient(
-		135deg,
-		var(--omnipotent-purple),
-		var(--conservator-blue)
-	);
+	background: linear-gradient(135deg, var(--bg1), var(--bg2));
 	z-index: -1;
 	border: none;
 }
@@ -180,15 +267,13 @@ main h3 {
 	background-image: linear-gradient(
 			135deg,
 			rgba(0, 0, 0, 0.3),
-			rgba(var(--veiled-green-rgb), 0.2) 15%,
-			rgba(var(--veiled-green-rgb), 0.2) 85%,
-			rgba(255, 255, 255, 0.15)
+			transparent 30%,
+			transparent 70%,
+			/*rgba(var(--veiled-green-rgb), 0.2) 15%,
+			rgba(var(--veiled-green-rgb), 0.2) 85%,*/
+				rgba(255, 255, 255, 0.15)
 		),
-		linear-gradient(
-			135deg,
-			var(--omnipotent-purple),
-			var(--conservator-blue)
-		);
+		linear-gradient(135deg, var(--bg1), var(--bg2));
 	clip-path: polygon(
 		40px 5px,
 		calc(100% - 5px) 5px,
@@ -387,7 +472,6 @@ main h3 {
 	float: right;
 	width: 100px;
 	transition: opacity 0.25s;
-	border-bottom: var(--momentary-green) solid 1px;
 }
 
 #github-link:hover {

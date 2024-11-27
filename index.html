@@ -3,12 +3,12 @@
 	<html>
 		<head>
 			<title>Caden Metzgus</title>
-
 			<link
 				rel="icon"
 				href="/resource/FortunaEye.png"
 				type="image/x-icon" />
 			<link rel="stylesheet" href="/styles.css?v=1" />
+			<script src="/bgColorSwap.js" defer></script>
 		</head>
 		<body>
 			<div id="wallpaper"></div>
@@ -17,7 +17,7 @@
 				<nav>
 					<div class="border">
 						<div class="backdrop" id="page-nav">
-							<span id="nav-label">Navigation</span>
+							<span class="side-label">Navigation</span>
 							<br />
 							<a href="#about">About Me</a>
 							<a href="#projects">Projects</a>
@@ -30,13 +30,61 @@
 			</header>
 			<main>
 				<div id="color-change-container">
+					<div id="preset-colors">
+						<button id="default-color"></button>
+						<button id="experimental-color"></button>
+						<button id="cadex-color"></button>
+						<button id="madness-color"></button>
+						<button id="grimshaw-color"></button>
+					</div>
 					<div class="border">
 						<div class="backdrop" id="color-change">
-							<br />
-							<form>
-								<input type="range" name="red" />
-								<input type="range" name="green" />
-								<input type="range" name="blue" />
+							<span class="side-label">Background</span>
+							<form id="color-change-form">
+								<input
+									type="range"
+									min="0"
+									max="255"
+									value="44"
+									id="red-one"
+									class="red" />
+								<input
+									type="range"
+									min="0"
+									max="255"
+									value="17"
+									id="green-one"
+									class="green" />
+								<input
+									type="range"
+									min="0"
+									max="255"
+									value="57"
+									id="blue-one"
+									class="blue" />
+								<span>________________</span>
+								<input
+									type="range"
+									min="0"
+									max="255"
+									value="0"
+									id="red-two"
+									class="red" />
+								<input
+									type="range"
+									min="0"
+									max="255"
+									value="48"
+									id="green-two"
+									class="green" />
+								<input
+									type="range"
+									min="0"
+									max="255"
+									value="82"
+									id="blue-two"
+									class="blue" />
+								<label>R G B</label>
 							</form>
 							<br />
 						</div>
@@ -120,6 +168,9 @@
 							<img src="/src/logos/github.png" />
 							<img src="/src/logos/c++.png" />
 							<img src="/src/logos/sdl.png" />
+							<img src="/src/logos/lua.png" />
+							<img src="/src/logos/python.png" />
+							<img src="/src/logos/java.png" />
 						</section>
 					</div>
 				</div>
@@ -141,7 +192,11 @@
 									id="github-link"
 							/></a>
 							Besides this page here, I have other projects on
-							GitHub that might interest you.
+							<a
+								href="https://github.com/Cadexcy23?tab=repositories"
+								>my GitHub</a
+							>
+							that might interest you.
 						</section>
 					</div>
 				</div>
